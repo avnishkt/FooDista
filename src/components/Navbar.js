@@ -1,7 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {Link,useNavigate} from 'react-router-dom'
+
+import Badge from "react-bootstrap/Badge"
+
 
 export default function Navbar() {
+  const navicate =useNavigate();
+  const  handlelog =()=>{
+    localStorage.removeItem('authToken');
+    navicate('/login');
+  }
   
   return (
     <>
@@ -16,9 +24,20 @@ export default function Navbar() {
           <ul className="menu-items">
             <li><Link to="/">Home</Link></li>
             {/* <li><Link to="/about">About</Link></li> */}
-            <li><Link to="/menu">MY ORDER</Link></li>
+            {(localStorage.getItem("authToken")) ? 
+            <li><Link to="/menu">MY ORDER</Link></li>:" "
+          }
+           {(!localStorage.getItem("authToken")) ? <>
+
             <li><Link to="/createuser">signup</Link></li>
             <li><Link to="/contact">Contact</Link></li>
+            </>: <>
+            <li><Link to="/createuser">  MyCart {' '}
+      <Badge pill bg="danger">{2}</Badge></Link></li>
+            <li><Link to="/login" onClick={handlelog}>logout</Link></li>
+            </>
+          }
+
           </ul>
           <h1 className="logo">Foo<span style={{"fontStyle":'italic'}}>Dista</span></h1>
         </div>

@@ -38,7 +38,7 @@ export default function Login() {
       <div className="card">
         <div className="card_title">
           <h1>Create Account</h1>
-          <span>Already have an account? <Link to="/login">Sign In</Link></span>
+          <span>New User <Link to="/createuser">{" "}Sign up</Link></span>
         </div>
         <div className="form">
         <form onSubmit={handlesubmit}>
