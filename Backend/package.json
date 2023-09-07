@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": " nodemon app.js ",
-    "build":"npm i"
+    "build": "npm i",
+    "start": "nodemon app.js"
   },
   "author": "",
   "license": "ISC",
@@ -15,6 +16,7 @@
     "express": "^4.18.2",
     "express-validator": "^7.0.1",
     "jsonwebtoken": "^9.0.1",
-    "mongoose": "^7.4.3"
+    "mongoose": "^7.4.3",
+    "nodemon": "^3.0.1"
   }
 }
