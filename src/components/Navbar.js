@@ -32,17 +32,17 @@ export default function Navbar() {
             <li><Link to="/">Home</Link></li>
             {/* <li><Link to="/about">About</Link></li> */}
             {(localStorage.getItem("authToken")) ? 
-            <li><Link to="/menu">MY ORDER</Link></li>:" "
+            <li><Link to="/menu">MyOrder</Link></li>:" "
           }
            {(!localStorage.getItem("authToken")) ? <>
 
-            <li><Link to="/createuser">signup</Link></li>
+            <li><Link to="/createuser">Signup</Link></li>
             <li><Link to="/contact">Contact</Link></li>
             </>: <>
             <li><div onClick={()=>{setcartView(true)}}>  MyCart {' '}
       <Badge pill bg="danger">{data.length}</Badge></div></li>
       {cartView ? <Modal onClose={() => setcartView(false)}><Cart></Cart></Modal> : ""}
-            <li><Link to="/login" onClick={handlelog}>logout</Link></li>
+            <li><Link to="/login" onClick={handlelog}>Logout</Link></li>
             </>
           }
 
@@ -82,7 +82,7 @@ export default function Navbar() {
             width: 100%;
             
             color: #000;
-    background: #00ffef;
+    background:#0dd6e6;
 
             opacity: 0.85;
             
@@ -112,14 +112,15 @@ export default function Navbar() {
             font-size: 1.3rem;
           }
 
-          .navbar Link {
+          .navbar a {
             color:#000000 !important;
+            text-color:black;
             text-decoration: none;
-            font-weight: 700;
+            font-weight: 400;
             transition: color 0.3s ease-in-out;
           }
 
-          .navbar Link:hover {
+          .navbar a:hover {
             color: black;
           }
 

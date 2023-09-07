@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar'
 import Typed from 'typed.js';
 
 import Card from '../components/Card'
+import Footer from "../components/Footer";
 // import Intro from '../components/Intro'
 
 export default function Home() {
@@ -315,6 +316,7 @@ export default function Home() {
         }
 
       </div>
+      <Footer></Footer>
    
     </>
   )
