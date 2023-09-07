@@ -34,22 +34,22 @@ export default function Login() {
     }
   return (
     <>
-    <div className="container">
-      <div className="card">
-        <div className="card_title">
+    <div className="containers">
+      <div className="cards">
+        <div className="card_titles">
           <h1>Create Account</h1>
           <span>New User <Link to="/createuser">{" "}Sign up</Link></span>
         </div>
-        <div className="form">
+        <div className="forms">
         <form onSubmit={handlesubmit}>
           <input type="email" name="email" placeholder="Email" id="email"  value={credentials.email} onChange={onchg} />
           <input type="password" name="password" placeholder="Password" id="password"  value={credentials.password} onChange={onchg}/>
           <button type="submit">Login</button>
-          <Link to='/createuser' className='m-3 btn btn-danger'>New User</Link>
+          <Link to='/createuser' className=' btns btn-dangers'>New User</Link>
 
           </form>
         </div>
-        <div className="card_terms">
+        <div className="card_termss">
             <input type="checkbox" name="" id="terms"/> <span>I have read and agree to the <Link to="">Terms of Service</Link></span>
         </div>
       </div>
@@ -67,9 +67,10 @@ export default function Login() {
   font-family: "Poppins", sans-serif;
 }
 
-.container {
+.containers {
   height: 100vh;
   width: 100%;
+  color:black;
   align-items: center;
   display: flex;
   justify-content: center;
@@ -80,7 +81,7 @@ export default function Login() {
   );
 }
 
-.card {
+.cards {
   border-radius: 10px;
   box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
   width: 400px;
@@ -89,17 +90,17 @@ export default function Login() {
   padding: 10px 30px;
 }
 
-.card_title {
+.card_titles {
   text-align: center;
   padding: 10px;
 }
 
-.card_title h1 {
+.card_titles h1 {
   font-size: 26px;
   font-weight: bold;
 }
 
-.form input {
+.forms input {
   margin: 10px 0;
   width: 100%;
   background-color: #e2e2e2;
@@ -109,7 +110,7 @@ export default function Login() {
   border-radius: 4px;
 }
 
-.form button {
+.forms button {
   background-color: #4796ff;
   color: #ffffff;
   font-size: 16px;
@@ -120,27 +121,27 @@ export default function Login() {
   width: 100%;
 }
 
-.card_terms {
+.card_termss {
   display: flex;
   align-items: center;
   padding: 10px;
 }
 
-.card_terms input[type="checkbox"] {
+.card_termss input[type="checkbox"] {
   background-color: #e2e2e2;
 }
 
-.card_terms span {
+.card_termss span {
   margin: 5px;
   font-size: 13px;
 }
 
-.card a {
+.cards a {
   color: #4796ff;
   text-decoration: none;
 }
 
-.btn.btn-danger {
+.btns.btn-dangers {
   background-color: #4796ff;
   color: #ffffff;
   margin-top:2%;

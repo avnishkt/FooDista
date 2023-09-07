@@ -1,5 +1,6 @@
 import React, { useEffect, useState,useRef } from 'react'
-import { useDispatchCart,useCart } from './ContestReducer';
+
+import { useDispatchCart, useCart } from './ContestReducer';
 
 export default function Card(props) {
   let dispatch =useDispatchCart();
@@ -44,9 +45,14 @@ console.log(data);
     setsize(priceRef.current.value)
     
   },[])
-    return (
-      <div className="card" style={{ width: "18rem" }}>
-      <img src={props.foodItem.img} className="card-img-top" style={{ height: "200px", objectFit: "cover" }} alt="Food Item" />
+  return (
+    <div className="card" style={{ width: '18rem' }}>
+      <img
+        src={props.foodItem.img}
+        className="card-img-top"
+        style={{ height: '200px', objectFit: 'cover' }}
+        alt="Food Item"
+      />
       <div className="card-body">
         <h5 className="card-title">{props.foodItem.name}</h5>
         <p className="card-text">{props.foodItem.description}</p>
@@ -54,8 +60,8 @@ console.log(data);
       <div className="card-footer">
         <div className="d-flex justify-content-between align-items-center">
           <div>
-            <select className="form-select" onChange={(e) => setqty(e.target.value)}>
-              {Array.from(Array(6), (e, i) => (
+            <select className="form-select" onChange={(e) => setqty(parseInt(e.target.value, 10))}>
+              {Array.from(Array(6), (_, i) => (
                 <option key={i + 1} value={i + 1}>
                   {i + 1}
                 </option>
@@ -63,22 +69,23 @@ console.log(data);
             </select>
           </div>
           <div>
-            <select className="form-select" ref={priceRef} onChange={(e) => setsize(e.target.value)}>
-              {priceOption.map((data) => (
-                <option key={data} value={data}>
-                  {data}
-                </option>
-              ))}
+            <select className="form-select" ref={priceRef}  onChange={(e) => setsize(e.target.value)}>
+              <option value=" ">Select Size</option>
+              { priceOption.map((data)=>{
+                        return  <option key ={data} value ={data}>{data}</option>
+
+                       })}
+                      
             </select>
           </div>
           <div className="d-inline fs-5">
-            ${finalPrice.toFixed(2)} /-
+            {size && <span>${qty * parseInt(options[size], 10)}/-</span>}
           </div>
         </div>
-        <button className="btn btn-success mt-3" onClick={handeltoCart}>Add to Cart</button>
+        <button className="btn btn-success mt-3" onClick={handeltoCart}>
+          Add to Cart
+        </button>
       </div>
     </div>
-    
-      );
-    }
-
+  );
+}

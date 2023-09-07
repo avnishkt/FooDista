@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react'
+
 import {Link,useNavigate} from 'react-router-dom'
+import Cart from '../screens/Cart';
+import { useCart } from './ContestReducer';
+import Modal from '../Modal';
 
 import Badge from "react-bootstrap/Badge"
 
 
 export default function Navbar() {
+  let data = useCart();
+
   const navicate =useNavigate();
+  const [cartView,setcartView]= useState(false);
   const  handlelog =()=>{
     localStorage.removeItem('authToken');
     navicate('/login');
@@ -32,8 +39,9 @@ export default function Navbar() {
             <li><Link to="/createuser">signup</Link></li>
             <li><Link to="/contact">Contact</Link></li>
             </>: <>
-            <li><Link to="/createuser">  MyCart {' '}
-      <Badge pill bg="danger">{2}</Badge></Link></li>
+            <li><div onClick={()=>{setcartView(true)}}>  MyCart {' '}
+      <Badge pill bg="danger">{data.length}</Badge></div></li>
+      {cartView ? <Modal onClose={() => setcartView(false)}><Cart></Cart></Modal> : ""}
             <li><Link to="/login" onClick={handlelog}>logout</Link></li>
             </>
           }
@@ -45,17 +53,17 @@ export default function Navbar() {
 
       <style>
         {`
-          *,
-          *::after,
-          *::before {
-            box-sizing: border-box;
-            padding: 0;
-            margin: 0;
-          }
+          // *,
+          // *::after,
+          // *::before {
+          //   box-sizing: border-box;
+          //   padding: 0;
+          //   margin: 0;
+          // }
 
-          .html {
-            font-size: 62.5%;
-          }
+          // .html {
+          //   font-size: 62.5%;
+          // }
 
           .navbar input[type="checkbox"],
           .navbar .hamburger-lines {
@@ -105,14 +113,14 @@ export default function Navbar() {
           }
 
           .navbar Link {
-            color: #444;
+            color:#000000 !important;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 700;
             transition: color 0.3s ease-in-out;
           }
 
           .navbar Link:hover {
-            color: #117964;
+            color: black;
           }
 
           @media (max-width: 768px) {

@@ -39,24 +39,24 @@ const navigate=useNavigate();
   
   return (
     <>
-      <div className="container">
-      <div className="card">
-        <div className="card_title">
+      <div className="containers">
+      <div className="cards">
+        <div className="card_titles">
           <h1>Create Account</h1>
           <span>Already have an account? <Link to="login">Sign In</Link></span>
         </div>
-        <div className="form">
+        <div className="forms">
         <form onSubmit={handlesubmit}>
           <input type="text" name="name" id="username" placeholder="UserName" value={credentials.name} onChange={onchg}  />
           <input type="email" name="email" placeholder="Email" id="email"  value={credentials.email} onChange={onchg} />
           <input type="password" name="password" placeholder="Password" id="password"  value={credentials.password} onChange={onchg}/>
           <input type="text" name="location" placeholder="location" id="password" value={credentials.geolocation} onChange={onchg} />
           <button type="submit">Sign Up</button>
-          <Link to='/login' className='m-3 btn btn-danger'>Already a user</Link>
+          <Link to='/login' className=' btns btn-dangers'>Already a user</Link>
 
           </form>
         </div>
-        <div className="card_terms">
+        <div className="card_termss">
             <input type="checkbox" name="" id="terms"/> <span>I have read and agree to the <Link to="">Terms of Service</Link></span>
         </div>
       </div>
@@ -74,9 +74,10 @@ const navigate=useNavigate();
   font-family: "Poppins", sans-serif;
 }
 
-.container {
+.containers {
   height: 100vh;
   width: 100%;
+  color:black;
   align-items: center;
   display: flex;
   justify-content: center;
@@ -87,7 +88,7 @@ const navigate=useNavigate();
   );
 }
 
-.card {
+.cards {
   border-radius: 10px;
   box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
   width: 400px;
@@ -96,7 +97,7 @@ const navigate=useNavigate();
   padding: 10px 30px;
 }
 
-.card_title {
+.card_titles {
   text-align: center;
   padding: 10px;
 }
@@ -106,7 +107,7 @@ const navigate=useNavigate();
   font-weight: bold;
 }
 
-.form input {
+.forms input {
   margin: 10px 0;
   width: 100%;
   background-color: #e2e2e2;
@@ -116,7 +117,7 @@ const navigate=useNavigate();
   border-radius: 4px;
 }
 
-.form button {
+.forms button {
   background-color: #4796ff;
   color: #ffffff;
   font-size: 16px;
@@ -127,17 +128,17 @@ const navigate=useNavigate();
   width: 100%;
 }
 
-.card_terms {
+.card_termss {
   display: flex;
   align-items: center;
   padding: 10px;
 }
 
-.card_terms input[type="checkbox"] {
+.card_termss input[type="checkbox"] {
   background-color: #e2e2e2;
 }
 
-.card_terms span {
+.card_termss span {
   margin: 5px;
   font-size: 13px;
 }
@@ -147,7 +148,7 @@ const navigate=useNavigate();
   text-decoration: none;
 }
 
-.btn.btn-danger {
+.btns.btn-dangers {
   background-color: #4796ff;
   color: #ffffff;
   margin-top:2%;

@@ -1,4 +1,5 @@
 import './App.css';
+import { CartProvider } from './components/ContestReducer';
 import Home from './screens/Home';
 import Login from './screens/Login';
 import Signup from './screens/Signup';
@@ -8,9 +9,11 @@ import {
   Route,
 } from "react-router-dom";
 
+
+
 function App() {
   return (
-   <>
+   <CartProvider>
      <Router>
    <div>
     <Routes>
@@ -22,7 +25,7 @@ function App() {
     </Routes>
    </div>
    </Router>
-   </>
+   </CartProvider>
   );
 }
 
