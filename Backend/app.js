@@ -10,7 +10,7 @@ connectDatabase();
 const port = 5000;
 
 app.use((req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", 'http://localhost:3000'||'https://glittering-kitsune-4692ca.netlify.app/');
+    res.setHeader("Access-Control-Allow-Origin", 'https://glittering-kitsune-4692ca.netlify.app');
     res.header(
         "Access-Control-Allow-Headers",
         'Origin, X-Requested-With, Content-Type, Accept'
