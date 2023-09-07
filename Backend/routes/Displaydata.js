@@ -1,5 +1,4 @@
 const express = require('express');
-const fooduser = require('../models/user');
 const routerf = express.Router();
 
 routerf.post('/foodData',(req,res)=>{
