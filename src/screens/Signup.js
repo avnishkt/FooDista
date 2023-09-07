@@ -10,7 +10,7 @@ const navigate=useNavigate();
   const [credentials, setcredential] = useState({ name: '', password: '', email: "", geolocation: 'at food corner' })
   const handlesubmit = async (e) => {
       e.preventDefault();
-      const response = await fetch('http://localhost:5000/api/createuser', {
+      const response = await fetch('https://foodista-backendb.onrender.com/api/createuser', {
           method: "POST",
           headers: {
               'content-type': "application/json"

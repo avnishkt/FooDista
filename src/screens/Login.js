@@ -6,7 +6,7 @@ export default function Login() {
     let navigate =useNavigate()
     const handlesubmit = async (e) => {
         e.preventDefault();
-        const response = await fetch('http://localhost:5000/api/loginuser', {
+        const response = await fetch('https://foodista-backendb.onrender.com/api/loginuser', {
             method: "POST",
             headers: {
                 'content-type': "application/json"
